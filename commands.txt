@@ -4,8 +4,8 @@ npm install express
 node index.js
 delete nodemodules [+npm install afterwards]
 
-add to github
-jenkins
+//add to github
+//jenkins + git
 in jenkins pipeline build docker image
 in jenkins push to dockerhub
 run container
