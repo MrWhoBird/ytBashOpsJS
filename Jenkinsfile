@@ -8,9 +8,11 @@ pipeline {
         }
         stage('Clean') {
             steps {
+            catchError(                
                 sh 'docker stop devopst/bash-ops'
                 sh 'docker rm devopst/bash-ops-cont'
-                sh 'docker rmi devopst/bash-ops-img'
+                sh 'docker rmi devopst/bash-ops-img') {
+            }
             }
         }
         stage('Build') {
