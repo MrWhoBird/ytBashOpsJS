@@ -6,6 +6,6 @@ delete nodemodules [+npm install afterwards]
 
 //add to github
 //jenkins + git
-in jenkins pipeline build docker image
+in jenkins pipeline build docker image - docker build -t devopst/flask-app .
 in jenkins push to dockerhub
 run container
