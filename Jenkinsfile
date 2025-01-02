@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Clean') {
             steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'NOTHING TO CLEAN') {                
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {                
                     sh 'docker stop bash-ops-cont'
                     sh 'docker rm bash-ops-cont'
                     sh 'docker rmi devopst/bash-ops-img'
