@@ -14,12 +14,16 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('Push image to dockerhub') {
             steps {
-                sh 'docker login'
+                sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                 sh 'docker build -t devopst/bash-ops-img .'
                 sh 'docker image push devopst/bash-ops-img'
                 sh 'docker rmi devopst/bash-ops-img'
+            }
+        }
+        stage('Push image to dockerhub') {
+            steps {
                 sh 'docker run --name bash-ops-cont -d -p 3000:3000 devopst/bash-ops-img'
             }
         }
