@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'docker login'
                 sh 'docker build -t devopst/bash-ops-img .'
                 sh 'docker image push devopst/bash-ops-img'
                 sh 'docker rmi devopst/bash-ops-img'
