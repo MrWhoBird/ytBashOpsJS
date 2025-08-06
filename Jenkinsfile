@@ -22,7 +22,7 @@ pipeline {
                 sh 'docker rmi devopst/bash-ops-img'
             }
         }
-        stage('Push image to dockerhub') {
+        stage('Run container') {
             steps {
                 sh 'docker run --name bash-ops-cont -d -p 3000:3000 devopst/bash-ops-img'
             }
