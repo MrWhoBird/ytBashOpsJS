@@ -1,9 +1,10 @@
 LOCAL RUN:
     npm init -y
-    npm install express
+    npm install express --save
     node index.js
     delete nodemodules [+npm install afterwards]
 
 JENKINS:
+    create a job with SCM script
+    install docker
     sudo usermod -a -G docker jenkins [add jenkins to docker group]
-    restart
