@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/MrWhoBird/ytBashOps.git'
+                git branch: 'main', url: 'https://github.com/MrWhoBird/ytBashOpsJS.git'
             }
         }
         stage('Clean') {
